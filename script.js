@@ -91,3 +91,25 @@ document.querySelectorAll(".copy-btn").forEach(btn => {
   });
 });
 
+// Open YouTube popup
+document.querySelectorAll(".youtube-thumb").forEach(item => {
+  item.addEventListener("click", () => {
+    const videoUrl = item.getAttribute("data-video") + "?autoplay=1";
+    const lightbox = document.getElementById("youtube-lightbox");
+    const iframe = document.getElementById("youtube-frame");
+
+    iframe.src = videoUrl;
+    lightbox.style.display = "flex";
+  });
+});
+
+// Close YouTube popup
+document.querySelector("#youtube-lightbox .close").addEventListener("click", () => {
+  const lightbox = document.getElementById("youtube-lightbox");
+  const iframe = document.getElementById("youtube-frame");
+
+    iframe.src = ""; // stop video
+    lightbox.style.display = "none";
+});
+
+
