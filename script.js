@@ -112,4 +112,25 @@ document.querySelector("#youtube-lightbox .close").addEventListener("click", () 
     lightbox.style.display = "none";
 });
 
+// Open Facebook popup
+document.querySelectorAll(".facebook-thumb").forEach(item => {
+  item.addEventListener("click", () => {
+    const videoUrl = item.getAttribute("data-video");
+    const lightbox = document.getElementById("facebook-lightbox");
+    const iframe = document.getElementById("facebook-frame");
+
+    iframe.src = videoUrl;
+    lightbox.style.display = "flex";
+  });
+});
+
+// Close Facebook popup
+document.querySelector("#facebook-lightbox .close").addEventListener("click", () => {
+  const lightbox = document.getElementById("facebook-lightbox");
+  const iframe = document.getElementById("facebook-frame");
+
+  iframe.src = ""; // stop video
+  lightbox.style.display = "none";
+});
+
 
