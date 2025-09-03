@@ -34,7 +34,7 @@ body {
 
 .hero-bottom {
   flex: 1;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@ body {
 }
 
 .hero-bottom h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #ff5722;
   margin-bottom: 15px;
   opacity: 0;
@@ -115,7 +115,7 @@ body {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
 /* Unified styling for media */
