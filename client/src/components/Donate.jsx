@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Copy, CheckCircle2 } from 'lucide-react';
 
 function Donate() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [copiedField, setCopiedField] = useState(null);
+
+    // Listen for the 'open-donate' event dispatched by the Navbar's "Donate Now" button
+    useEffect(() => {
+        const handleOpen = () => setIsPopupOpen(true);
+        window.addEventListener('open-donate', handleOpen);
+        return () => window.removeEventListener('open-donate', handleOpen);
+    }, []);
+
 
     const bankDetails = [
         { label: 'Account Number', value: '9879000100037910', id: 'acc' },

@@ -41,8 +41,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md py-3'
-                    : 'bg-transparent py-5 dark:bg-dark-bg/50'
+                ? 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md py-3'
+                : 'bg-transparent py-5 dark:bg-dark-bg/50'
                 }`}
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
@@ -75,7 +75,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                                 key={link.name}
                                 to={link.path}
                                 className={`font-medium transition-colors hover:text-primary ${location.pathname === link.path ? 'text-primary' :
-                                        isScrolled ? 'text-gray-700 dark:text-gray-300' : 'text-gray-800 dark:text-gray-200 drop-shadow-sm'
+                                    isScrolled ? 'text-gray-700 dark:text-gray-300' : 'text-gray-800 dark:text-gray-200 drop-shadow-sm'
                                     }`}
                             >
                                 {link.name}
@@ -87,8 +87,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
                     <button
                         onClick={toggleDarkMode}
                         className={`p-2 rounded-full transition-colors ${isScrolled
-                                ? 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200'
-                                : 'bg-white/20 hover:bg-white/30 text-gray-800 dark:text-white backdrop-blur-sm'
+                            ? 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200'
+                            : 'bg-white/20 hover:bg-white/30 text-gray-800 dark:text-white backdrop-blur-sm'
                             }`}
                         aria-label="Toggle dark mode"
                     >
@@ -96,13 +96,12 @@ function Navbar({ darkMode, toggleDarkMode }) {
                     </button>
 
                     {/* Donate CTA */}
-                    <a
-                        href="/#donate"
-                        onClick={(e) => handleNavClick(e, { path: '/#donate', isAnchor: true })}
+                    <button
+                        onClick={() => window.dispatchEvent(new CustomEvent('open-donate'))}
                         className="bg-primary hover:bg-accent text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105 shadow-md shadow-primary/30"
                     >
                         Donate Now
-                    </a>
+                    </button>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
@@ -156,16 +155,15 @@ function Navbar({ darkMode, toggleDarkMode }) {
                                     </Link>
                                 )
                             ))}
-                            <a
-                                href="/#donate"
-                                onClick={(e) => {
-                                    handleNavClick(e, { path: '/#donate', isAnchor: true });
+                            <button
+                                onClick={() => {
+                                    window.dispatchEvent(new CustomEvent('open-donate'));
                                     setMobileMenuOpen(false);
                                 }}
                                 className="mt-4 bg-primary text-white text-center py-4 rounded-xl font-bold text-lg"
                             >
                                 Donate Now
-                            </a>
+                            </button>
                         </div>
                     </motion.div>
                 )}

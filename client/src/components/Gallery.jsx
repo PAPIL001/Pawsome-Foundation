@@ -12,11 +12,10 @@ const galleryData = [
     { id: 4, type: 'image', category: 'feeding', src: '/media/IMG_20250614_175158.jpg', alt: 'Feeding time' },
     { id: 5, type: 'image', category: 'feeding', src: '/media/IMG_20250615_175716_271.webp', alt: 'Animals eating' },
 
-    // Videos (Local MP4s)
-    { id: 6, type: 'local_video', category: 'videos', src: '/media/IMG-20250610-WA0009.jpg', videoUrl: '/media/VID-20250612-WA0015.mp4', alt: 'Rescue Video 1' },
-    { id: 7, type: 'local_video', category: 'videos', src: '/media/IMG_20250614_175158.jpg', videoUrl: '/media/VID-20250613-WA0023.mp4', alt: 'Feeding Video' },
-    { id: 8, type: 'local_video', category: 'videos', src: '/media/IMG-20250612-WA0012.jpg', videoUrl: '/media/VID-20250614-WA0003.mp4', alt: 'Rescue Video 3' },
-    { id: 9, type: 'local_video', category: 'videos', src: '/media/IMG_20250615_175716_271.webp', videoUrl: '/media/VID-20250617-WA0080.mp4', alt: 'Sanctuary Tour' },
+    // Videos (YouTube embeds — reliable on all hosting platforms)
+    { id: 6, type: 'video', category: 'videos', src: 'https://img.youtube.com/vi/ENEVAjcsDAU/hqdefault.jpg', videoUrl: 'https://www.youtube.com/embed/ENEVAjcsDAU', alt: 'Rescue Video 1' },
+    { id: 7, type: 'video', category: 'videos', src: 'https://img.youtube.com/vi/iMW0wijYt-c/hqdefault.jpg', videoUrl: 'https://www.youtube.com/embed/iMW0wijYt-c', alt: 'Feeding Video' },
+    { id: 8, type: 'video', category: 'videos', src: 'https://img.youtube.com/vi/6cWZ66c1yzU/hqdefault.jpg', videoUrl: 'https://www.youtube.com/embed/6cWZ66c1yzU', alt: 'Rescue Video 3' },
 ];
 
 const categories = ['All', 'rescues', 'feeding', 'videos'];
