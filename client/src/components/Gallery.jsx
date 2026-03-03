@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
 
 const galleryData = [
-    // Images - Rescues
-    { id: 1, type: 'image', category: 'rescues', src: '/media/IMG-20250610-WA0009.jpg', alt: 'Rescue dog' },
-    { id: 2, type: 'image', category: 'rescues', src: '/media/IMG-20250612-WA0012.jpg', alt: 'Rescued animal care' },
-    { id: 3, type: 'image', category: 'rescues', src: '/media/IMG-20250823-WA0085.jpg', alt: 'Sanctuary resident' },
+    // Images - Rescues (hidden: /media/ files not available on Vercel deployment)
+    // { id: 1, type: 'image', category: 'rescues', src: '/media/IMG-20250610-WA0009.jpg', alt: 'Rescue dog' },
+    // { id: 2, type: 'image', category: 'rescues', src: '/media/IMG-20250612-WA0012.jpg', alt: 'Rescued animal care' },
+    // { id: 3, type: 'image', category: 'rescues', src: '/media/IMG-20250823-WA0085.jpg', alt: 'Sanctuary resident' },
 
     // Images - Feeding
-    { id: 4, type: 'image', category: 'feeding', src: '/media/IMG_20250614_175158.jpg', alt: 'Feeding time' },
+    // { id: 4, type: 'image', category: 'feeding', src: '/media/IMG_20250614_175158.jpg', alt: 'Feeding time' }, // hidden: not available on Vercel
     { id: 5, type: 'image', category: 'feeding', src: '/media/IMG_20250615_175716_271.webp', alt: 'Animals eating' },
 
     // Videos (YouTube embeds — reliable on all hosting platforms)
@@ -18,7 +18,7 @@ const galleryData = [
     { id: 8, type: 'video', category: 'videos', src: 'https://img.youtube.com/vi/6cWZ66c1yzU/hqdefault.jpg', videoUrl: 'https://www.youtube.com/embed/6cWZ66c1yzU', alt: 'Rescue Video 3' },
 ];
 
-const categories = ['All', 'rescues', 'feeding', 'videos'];
+const categories = ['All', /* 'rescues', // hidden: no working images */ 'feeding', 'videos'];
 
 function Gallery() {
     const [filter, setFilter] = useState('All');
